@@ -97,3 +97,12 @@ CORS: The server currently allows requests from `https://dar.southcentralus.clou
 3. Ensure the back-end CORS settings include the front-end origin you use locally.
 
 You should now be able to play the game from the front-end while it communicates with the FastAPI back-end.
+
+# Running Instance
+
+There is a currently running instance at https://dar.southcentralus.cloudapp.azure.com/ if you want to try it for yourself.
+
+And here is an image of what the game looks like:
+<p align="center">
+   <img width="572" height="832" alt="wordle_app" src="https://github.com/user-attachments/assets/5875e562-ba3e-4225-9c74-538623dc08cc" />
+</p>   
