@@ -1,9 +1,12 @@
+import os
+import random
+import uuid
+from collections import Counter
+
+import nltk
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
-import random, uuid
-import nltk
-from collections import Counter
 
 # Only need to run these once, or comment them after the first run
 nltk.download('words')
@@ -33,7 +36,11 @@ app = FastAPI()
 games = {}  # Maps game_id to {"answer": ..., "guesses": [...]}
 
 origins = [
-    "https://dar.southcentralus.cloudapp.azure.com",
+    origin.strip()
+    for origin in os.environ.get(
+        "CORS_ORIGINS", "https://dar.southcentralus.cloudapp.azure.com"
+    ).split(",")
+    if origin.strip()
 ]
 
 app.add_middleware(
