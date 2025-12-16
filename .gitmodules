@@ -1,0 +1,3 @@
+[submodule "wordle-frontend"]
+	path = wordle-frontend
+	url = https://github.com/andriydar2/wordle-frontend
